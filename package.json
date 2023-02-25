@@ -1,0 +1,22 @@
+{
+  "name": "reposition-schedule",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hankei6km/reposition-schedule.git"
+  },
+  "author": "hankei6km <hankei6km@gmail.com> (https://github.com/hankei6km)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hankei6km/reposition-schedule/issues"
+  },
+  "homepage": "https://github.com/hankei6km/reposition-schedule#readme",
+  "dependencies": {
+    "@hankei6km/reposition": "^0.1.1"
+  }
+}
