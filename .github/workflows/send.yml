@@ -45,3 +45,7 @@ jobs:
           npm run start
         env:
           GITHUB_TOKEN: ${{ steps.reposition-list.outputs.token }}
+          REPOSITION_API_KEY: ${{ secrets.REPOSITION_API_KEY }}
+          REPOSITION_DATABASE_ID: ${{ secrets.REPOSITION_DATABASE_ID }}
+          REPOSITION_FILTER_TIME_RANGE: ${{ vars.REPOSITION_FILTER_TIME_RANGE }}
+          REPO_LIST_LIMIT: ${{ vars.REPO_LIST_LIMIT }}
