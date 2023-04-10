@@ -49,3 +49,18 @@ jobs:
           REPOSITION_DATABASE_ID: ${{ secrets.REPOSITION_DATABASE_ID }}
           REPOSITION_FILTER_TIME_RANGE: ${{ vars.REPOSITION_FILTER_TIME_RANGE }}
           REPO_LIST_LIMIT: ${{ vars.REPO_LIST_LIMIT }}
+
+      # https://zenn.dev/tmknom/articles/github-apps-token#installation%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%88%E3%83%BC%E3%82%AF%E3%83%B3%E3%81%AE%E5%A4%B1%E5%8A%B9
+      #
+      # プロセス置換内で環境変数が展開されているように見えるが、実際には展開されていない。
+      # https://zenn.dev/hankei6km/scraps/132ce91bc5baeb
+      - name: Revoke generated token
+        if: always()
+        run: |
+          curl --location --silent --request DELETE \
+            --url "${GITHUB_API_URL}/installation/token" \
+            --header "Accept: application/vnd.github+json" \
+            --header "X-GitHub-Api-Version: 2022-11-28" \
+            --header @<(echo 'Authorization: Bearer ${GITHUB_TOKEN}' | envsubst)
+        env:
+          GITHUB_TOKEN: ${{ steps.reposition-list.outputs.token }}
