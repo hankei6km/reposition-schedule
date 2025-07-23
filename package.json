@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/hankei6km/reposition-schedule#readme",
   "dependencies": {
-    "@hankei6km/reposition": "^0.2.1"
+    "@hankei6km/reposition": "^0.2.2"
   }
 }
